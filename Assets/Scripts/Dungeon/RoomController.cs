@@ -15,7 +15,22 @@ public class RoomInfo
 
 public class RoomController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static RoomController instance;
+
+    string CurrantWorldName = "Basement";
+
+    RoomInfo currentLoadRoomData;
+
+    Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
+
+    public List<Room> loadedRooms = new List<Room>();
+
+    bool isLoadingRoom = false;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         
