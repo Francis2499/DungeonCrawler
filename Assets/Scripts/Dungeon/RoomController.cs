@@ -31,14 +31,8 @@ public class RoomController : MonoBehaviour
         instance = this;
     }
 
-    void Start()
+    public bool DoesRoomExist( int x, int y)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return loadedRooms.Find(item => item.x == x && item.y == y) != null;
     }
 }
